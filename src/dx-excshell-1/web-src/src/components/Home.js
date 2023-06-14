@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Heading, View } from '@adobe/react-spectrum'
 import CFBanner1920x390 from './CFBanner1920x390'
 import CFBanner1300x435 from './CFBanner1300x435'
+import CFBanner440x770 from './CFBanner440x770'
 import CFApp from './CFApp'
 
 export default function Home() {
@@ -64,6 +65,7 @@ export default function Home() {
       <Heading level={4}>Content Fragment path: {state.contentfragment.detail.plaintext}</Heading> 
       <CFBanner1920x390 contentfragment={state.contentfragment} label="Banner Ad 1920 x 390" aemauthorurl={aemauthorurl}></CFBanner1920x390>
       <CFBanner1300x435 contentfragment={state.contentfragment} label="Banner Ad 1300 x 435" aemauthorurl={aemauthorurl}></CFBanner1300x435>
+      <CFBanner440x770 contentfragment={state.contentfragment} label="Banner Ad 440 x 770" aemauthorurl={aemauthorurl}></CFBanner440x770>
       
     </View>
   );

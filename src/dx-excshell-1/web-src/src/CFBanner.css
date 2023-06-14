@@ -3,16 +3,26 @@
   position: relative;
   background: linear-gradient(90deg,rgba(0,0,0,0.5), rgba(0,0,0,0) 80%);
   border: #000 1px solid;
+  max-width: 1920px;
+  max-height: 390px;
+
 }
 .banner-1300x435-content {
   position: relative;
   border: #000 1px solid;
-  max-height: 435px;
   max-width: 1300px;
+  max-height: 435px;
   background: linear-gradient(90deg,rgba(0,0,0,0.5), rgba(0,0,0,0) 80%);
-  
-
 }
+.banner-440x770-content {
+  position: relative;
+  border: #000 1px solid;
+  max-width: 440px;
+  max-height: 770px;
+  background: linear-gradient(90deg,rgba(0,0,0,0.5), rgba(0,0,0,0) 80%);
+}
+
+
 .banner-1920x390-content .banner-pic img {
   object-fit: cover;
   width: 100%;
@@ -41,6 +51,21 @@
   right: 0;
   max-height: 435px;
   max-width: 1300px;
+}
+
+.banner-440x770-content .banner-pic img {
+  object-fit: cover;
+  width: 440px;
+  height: 100%;    
+  box-sizing: border-box;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 770px;
+  max-width: 440px;
 }
 
   .banner-text {
