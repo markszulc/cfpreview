@@ -7,26 +7,10 @@
   height: 390px;
 
 }
-.banner-1300x435-content {
-  position: relative;
-  border: #000 1px solid;
-  width: 1300px;
-  height: 435px;
-  background: linear-gradient(90deg,rgba(0,0,0,0.5), rgba(0,0,0,0) 80%);
-}
-
-.banner-440x770-content {
-  position: relative;
-  border: #000 1px solid;
-  width: 440px;
-  height: 770px;
-  background: linear-gradient(90deg,rgba(0,0,0,0.5), rgba(0,0,0,0) 80%);
-}
-
 
 .banner-1920x390-content .banner-pic img {
   object-fit: cover;
- box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -37,37 +21,140 @@
   width: 1920px;
 }
 
-.banner-1300x435-content .banner-pic img {
-  object-fit: cover;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+/* 1300 */
+
+.banner-1300x435-content {
+  position: relative;
+  border: #000 1px solid;
+  width: 1300px;
   height: 435px;
-  width: 865px;
+
 }
 
-.banner-440x770-content .banner-pic img {
+.banner-1300x435-content .banner-pic {
+  display: flex;
+  justify-content: space-between;
+  width: 1300px;
+  height: 435px;
+}
+
+.banner-1300x435-content .banner-text {
+  background: linear-gradient(90deg,rgba(0,0,0,0.5), rgba(0,0,0,0) 80%);
+  margin: 0;
+  padding: 140px 60px 60px 60px;
+  margin-top: -435px;
+  max-width: 1200px;
+  color: #fff;
+  height: 435px;
+}
+
+.banner-1300x435-content .banner-pic .pic {
+  width: 865px;
+  box-sizing: border-box;
+  height: 435px;
+}
+
+.banner-1300x435-content .banner-pic .pic img {
+  object-fit: cover;
+  box-sizing: border-box;
+  position: relative;
+  height: 435px;
+  width: 865px;
+  z-index: -1;
+}
+
+.banner-1300x435-content .banner-pic .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 435px;
+}
+
+.banner-1300x435-content .banner-pic .logo img {
+  width: 200px;
+}
+
+/* 440 */
+
+.banner-440x770-content {
+  position: relative;
+  background-color: #fff;
+  border: #000 1px solid;
+  width: 440px;
+  height: 770px;
+  box-sizing: border-box;
+  background: linear-gradient(0deg,rgba(0,0,0,1), rgba(0,0,0,0) 80%);
+}
+
+.banner-440x770-content .banner-pic {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  gap: 0px;
+  width: 440px;
+  height: 770px;
+  z-index: -1;
+}
+
+.banner-440x770-content .banner-pic .pic img {
   object-fit: cover;
   width: 440px;
-  height: 100%;    
+  height: 680px;    
   box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  max-height: 770px;
+  max-height: 680px;
   max-width: 440px;
 }
 
-.banner-440x770-content   .banner-text {
-  padding: 100px 30px;
+.banner-440x770-content .banner-pic .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  height: 88px;
+  width: 440px;
 }
+
+.banner-440x770-content .banner-pic .logo img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.banner-440x770-content .banner-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 30px;
+  margin-top: -682px;
+  height: 682px;
+  z-index: 1;
+}
+
+.banner-440x770-content .banner-text h3 {
+  font-size: 23px;
+  line-height: 35px;
+}
+
+.banner-440x770-content .banner-text h1 {
+  font-size: 28px;
+  line-height: 28px;
+}
+
+.banner-440x770-content .banner-text p {
+  font-size: 12px;
+  line-height: 40px;
+}
+
+.banner-440x770-content .banner-text .button-container {
+  margin:0;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* default */
 
   .banner-text {
     max-width: 1200px;
@@ -78,15 +165,23 @@
   .banner-text p {
     margin: 0;
     text-transform: uppercase;
-    font: normal normal medium 18px/22px Adobe Clean;
+    font: normal 400 18px/22px Adobe Clean;
+    color: rgba(255,255,255,0.6);
   }
   
+  .banner-text .button-container {
+    text-transform: none;
+    font: normal 400 18px/22px Adobe Clean;
+    margin: 20px 0px;
+  }
+
   .banner-text h1 {
     font-size: 48px;
     font-weight: 700;
     line-height: 48px;
     margin: 0;
-    font: normal normal 900 48px/52px Adobe Clean;
+    font: normal normal 900 48px/62px Adobe Clean;
+    margin-bottom: 10px;
   }
   
   .banner-text h3 {

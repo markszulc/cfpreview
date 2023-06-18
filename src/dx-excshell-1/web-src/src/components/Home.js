@@ -63,7 +63,7 @@ export default function Home() {
 
   return (
     <View>
-      <Heading level={1}>Welcome to Content Preview!</Heading>
+      <Heading level={1}>Content Previewer</Heading>
       <Heading level={4}>Content Fragment path: {cf}</Heading> 
       <CFBanner1920x390 contentfragment={state.contentfragment} label="Banner Ad 1920 x 390" aemauthorurl={aemauthorurl}></CFBanner1920x390>
       <CFBanner1300x435 contentfragment={state.contentfragment} label="Banner Ad 1300 x 435" aemauthorurl={aemauthorurl}></CFBanner1300x435>

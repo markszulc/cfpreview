@@ -1,0 +1,12 @@
+<svg id="Squares_01" data-name="Squares 01" xmlns="http://www.w3.org/2000/svg" width="376" height="376" viewBox="0 0 376 376">
+  <rect id="Square_08" data-name="Square 08" width="95" height="93" transform="translate(188 283)" fill="#cbe7f0"/>
+  <rect id="Square_07b" data-name="Square 07b" width="95" height="93" transform="translate(93 283)" fill="#0296a6" opacity="0.302"/>
+  <rect id="Square_07a" data-name="Square 07a" width="95" height="93" transform="translate(93 283)" fill="#fff" opacity="0.498" style="mix-blend-mode: overlay;isolation: isolate"/>
+  <rect id="Square_06" data-name="Square 06" width="95" height="95" transform="translate(93 188)" fill="#171c28" opacity="0.705"/>
+  <rect id="Square_05b" data-name="Square 05b" width="93" height="93" transform="translate(283 95)" fill="#cbe7f0" opacity="0.8"/>
+  <rect id="Square_05a" data-name="Square 05a" width="93" height="93" transform="translate(283 95)" opacity="0.8" style="mix-blend-mode: overlay;isolation: isolate"/>
+  <rect id="Square_04" data-name="Square 04" width="95" height="93" transform="translate(188 95)" fill="#818a96" opacity="0.301"/>
+  <rect id="Square_03" data-name="Square 03" width="95" height="95" transform="translate(188)" fill="#cbe7f0" opacity="0.8"/>
+  <rect id="Square_02" data-name="Square 02" width="95" height="95" transform="translate(93)" fill="#0296a6" opacity="0.8"/>
+  <rect id="Square_01" data-name="Square 01" width="93" height="95" transform="translate(0 188)" fill="#171c28" opacity="0.245"/>
+</svg>

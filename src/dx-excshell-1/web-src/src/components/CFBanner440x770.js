@@ -1,5 +1,6 @@
 import React from 'react'
-
+import SecurBankLogo from '../resources/sb-logo.svg';
+import SecurBankSquares from '../resources/sb-squares.svg';
 
 export default function CFBanner({ contentfragment, label, aemauthorurl}) {
 
@@ -14,10 +15,16 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
     <h1>{label}</h1>
     <div className='banner-440x770-content'>
       <div className='banner-pic'>
-      <img 
-          loading="lazy" alt="" type="image/jpeg" 
-          src={assetPath} 
-          width="1600" height="634"></img>
+        <div className='pic'>
+            <img 
+              loading="lazy" alt="" type="image/jpeg" 
+              src={assetPath} 
+              width="1600" height="634">
+            </img>
+        </div>
+        <div className='logo'>
+            <img src={SecurBankLogo} alt="Logo" />
+        </div>
       </div>
       <div className='banner-text'>
         <h3>{contentfragment.pretitle}</h3>

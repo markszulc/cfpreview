@@ -34,7 +34,8 @@
 .signage-text p {
   margin: 0;
   text-transform: uppercase;
-  font: normal normal medium 18px/22px Adobe Clean;
+  color: rgba(255,255,255,0.6);
+  font: normal normal medium 28px/22px Adobe Clean;
 }
 
 .signage-text h1 {

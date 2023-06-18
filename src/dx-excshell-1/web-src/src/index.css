@@ -2,10 +2,18 @@
   --body-font-family: 'Adobe Clean', helvetica, ubuntu, roboto, noto, sans-serif;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
-  padding: 5px;
+  padding: 0 15px;
+}
+
+h1,h4 {
+  font-weight: 400;
 }
 
 a.button:any-link, button {
@@ -19,8 +27,8 @@ a.button:any-link, button {
     font-style: normal;
     font-weight: 600;
     cursor: pointer;
-    color: #fff;
-    background-color: #035fe6;
+    color: #000;
+    background-color: #CBE7F0;
     margin: 16px 0;
     white-space: nowrap;
     overflow: hidden;
