@@ -3,19 +3,19 @@ import { Heading, View } from '@adobe/react-spectrum'
 import CFBanner1920x390 from './CFBanner1920x390'
 import CFBanner1300x435 from './CFBanner1300x435'
 import CFBanner440x770 from './CFBanner440x770'
-import CFApp from './CFApp'
+import CFDigitalSignage1080x1920 from './CFSignage1080x1920'
 
 export default function Home() {
 
   const aemauthorurl = 'https://author-p55117-e571178.adobeaemcloud.com';
     
   const defaultcontent = {
-    "headline": "Earn Great Rewards",
-    "pretitle": "While Spending Money",
+    "headline": "Headline",
+    "pretitle": "Pretitle",
     "detail": {
-      "plaintext": "Start Today"
+      "plaintext": "Detail"
     },
-    "callToAction": "Find Out More now!",
+    "callToAction": "Call to Action",
     "heroImage": {
       "_publishUrl": "https://publish-p55117-e571178.adobeaemcloud.com/content/dam/securbank/en/stock/cards---payment/AdobeStock_414939518.jpeg",
       "_dynamicUrl": "/adobe/dynamicmedia/deliver/dm-aid--778b54be-e653-4409-9b82-e39342f47252/AdobeStock_414939518.jpg"
@@ -52,7 +52,10 @@ export default function Home() {
 
   const cfpath = new URLSearchParams(document.location.search)
   const cf = cfpath.get('cf')
-  console.log('Content Fragment Path: ', cf)
+  if (cf)
+    console.log('Content Fragment Path: ', cf)
+  else
+    cf = 'Not found - Displaying Placeholder Content'
 
   useEffect(() => {
     getContentFragment();
@@ -62,11 +65,10 @@ export default function Home() {
     <View>
       <Heading level={1}>Welcome to Content Preview!</Heading>
       <Heading level={4}>Content Fragment path: {cf}</Heading> 
-      <Heading level={4}>Content Fragment path: {state.contentfragment.detail.plaintext}</Heading> 
       <CFBanner1920x390 contentfragment={state.contentfragment} label="Banner Ad 1920 x 390" aemauthorurl={aemauthorurl}></CFBanner1920x390>
       <CFBanner1300x435 contentfragment={state.contentfragment} label="Banner Ad 1300 x 435" aemauthorurl={aemauthorurl}></CFBanner1300x435>
       <CFBanner440x770 contentfragment={state.contentfragment} label="Banner Ad 440 x 770" aemauthorurl={aemauthorurl}></CFBanner440x770>
-      
+      <CFDigitalSignage1080x1920 contentfragment={state.contentfragment} label="Digital Signage 1080 x 1920" aemauthorurl={aemauthorurl}></CFDigitalSignage1080x1920>
     </View>
   );
 

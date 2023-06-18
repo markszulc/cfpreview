@@ -11,6 +11,7 @@ import Runtime, { init } from '@adobe/exc-app'
 import App from './components/App'
 import './index.css'
 import './CFBanner.css'
+import './CFSignage.css'
 
 
 window.React = require('react')
