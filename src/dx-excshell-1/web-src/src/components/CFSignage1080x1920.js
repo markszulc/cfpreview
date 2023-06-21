@@ -12,7 +12,6 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
 
   return (
     <div>
-    <h1>{label}</h1>
     <div className='signage-1080x1920-content'>
       <div className='signage-pic'>
       <img 
@@ -26,6 +25,7 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
         <p>{contentfragment.detail.plaintext}</p>
            </div>
     </div>
+    <h3 className='cfheading'>{label}</h3>
     </div>
   );
 

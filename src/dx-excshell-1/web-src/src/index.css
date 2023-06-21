@@ -9,11 +9,16 @@
 html,
 body {
   margin: 0;
-  padding: 0 15px;
+  padding: 0px;
 }
 
 h1,h4 {
   font-weight: 400;
+}
+
+.cfheading {
+  margin: 0;
+  padding-bottom: 50px;
 }
 
 a.button:any-link, button {

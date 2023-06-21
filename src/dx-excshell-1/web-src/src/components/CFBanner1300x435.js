@@ -13,7 +13,6 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
 
   return (
     <div>
-    <h1>{label}</h1>
     <div className='banner-1300x435-content'>
       <div className='banner-pic'>
         <div className='pic'>
@@ -34,6 +33,7 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
         <p className='button-container'><a href='#' className='button primary'>{contentfragment.callToAction}</a></p>
       </div>
     </div>
+    <h3 className='cfheading'>{label}</h3>
     </div>
   );
 

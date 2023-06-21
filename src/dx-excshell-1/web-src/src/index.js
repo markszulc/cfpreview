@@ -69,8 +69,8 @@ function bootstrapInExcShell () {
   // set solution info, shortTitle is used when window is too small to display full title
   runtime.solution = {
     icon: 'AdobeExperienceCloud',
-    title: 'cfpreview',
-    shortTitle: 'JGR'
+    title: 'Content Fragment Preview',
+    shortTitle: 'CFPreview'
   }
   runtime.title = 'cfpreview'
 }
