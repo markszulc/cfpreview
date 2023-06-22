@@ -3,7 +3,7 @@ import SecurBankLogo from '../resources/sb-logo.svg';
 import SecurBankSquares from '../resources/sb-squares.svg';
 
 
-export default function CFBanner({ contentfragment, label, aemauthorurl}) {
+export default function CFBanner({ cfpath, contentfragment, label, aemauthorurl}) {
 
   console.log('Content Fragment Banner Headline: ', contentfragment.headline)
 
@@ -11,9 +11,12 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
   const assetPath = 'https://s7ap1.scene7.com/is/image/adobeanz/' + imagepath.split("/").pop().split(".")[0] + ':Banner-1300x435?ts=${Math.random()*1000}';
   console.log('Asset Path: ', assetPath);
 
+  itemId =  "urn:aemconnection:" + cfpath + "/jcr:content/data/master";
+  console.log('Item ID: ', itemId);          
+
   return (
     <div>
-    <div className='banner-1300x435-content'>
+    <div className='banner-1300x435-content' itemScope itemID={itemId} itemfilter="cf">
       <div className='banner-pic'>
         <div className='pic'>
           <img 
@@ -23,12 +26,12 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
           </img>
         </div>
         <div className='logo'>
-          <img src={SecurBankLogo} alt="Logo" />
+          <img itemProp="heroImage" itemType="image" src={SecurBankLogo} alt="Logo" />
         </div>
       </div>
       <div className='banner-text'>
       <h3>{contentfragment.pretitle}</h3>
-        <h1>{contentfragment.headline}</h1>
+        <h1 itemProp="headline" itemType="text">{contentfragment.headline}</h1>
         <p>{contentfragment.detail.plaintext}</p>
         <p className='button-container'><a href='#' className='button primary'>{contentfragment.callToAction}</a></p>
       </div>
