@@ -4,10 +4,13 @@ import React from 'react'
 export default function CFBanner({ contentfragment, label, aemauthorurl}) {
 
   console.log('Content Fragment Digital Signage: ', contentfragment.headline)
-
-  const imagepath = contentfragment.heroImage._publishUrl;
-  const assetPath = 'https://s7ap1.scene7.com/is/image/adobeanz/' + imagepath.split("/").pop().split(".")[0] + ':Signage1080x1920?ts=${Math.random()*1000}';
-  console.log('Asset Path: ', assetPath);
+  
+  const _publishUrl = contentfragment.heroImage._publishUrl;
+  if (_publishUrl === '') {
+    assetPath = contentfragment.heroImage._authorUrl;
+  } else {
+    const assetPath = 'https://s7ap1.scene7.com/is/image/adobeanz/' + imagepath.split("/").pop().split(".")[0] + ':Banner-1300x435?ts=${Math.random()*1000}';
+  }
 
 
   return (

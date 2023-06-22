@@ -42,8 +42,9 @@ function App (props) {
     },
     "callToAction": "Call to Action",
     "heroImage": {
-      "_publishUrl": "https://publish-p55117-e571178.adobeaemcloud.com/content/dam/securbank/en/stock/cards---payment/AdobeStock_414939518.jpeg",
-      "_dynamicUrl": "/adobe/dynamicmedia/deliver/dm-aid--778b54be-e653-4409-9b82-e39342f47252/AdobeStock_414939518.jpg"
+      "_publishUrl": "",
+      "_authorUrl": "https://placehold.co/2000x2000",
+      "_dynamicUrl": ""
     },
     "_tags": [
       "audiences:subscribers"
