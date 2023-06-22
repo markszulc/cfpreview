@@ -12,14 +12,15 @@ function App (props) {
   console.log('runtime object:', props.runtime)
   console.log('ims object:', props.ims)
 
-  const cfpath = new URLSearchParams(document.location.search)
-  const cf = cfpath.get('cf')
-  const variationname = cfpath.get('variation')
+  const cfparam = new URLSearchParams(document.location.search)
+  const cfpath = cfparam.get('cf')
+  const variationname = cfparam.get('variation')
 
-  if (cf)
-    console.log('Content Fragment Path: ', cf)
+  if (cfpath) {
+    console.log('Content Fragment Path: ', cfpath);
+  }
   else
-    cf = 'Not found - Displaying Placeholder Content'
+  cfpath = 'Not found - Displaying Placeholder Content'
 
   // use exc runtime event handlers
   // respond to configuration change events (e.g. user switches org)
@@ -77,7 +78,7 @@ function App (props) {
 
   const getContentFragment = () => {
     let options = {};
-    const persistedquery = `/graphql/execute.json/securbank/OfferByPath;path=${cf};variation=${variationname};ts=${Math.random()*1000}`;
+    const persistedquery = `/graphql/execute.json/securbank/OfferByPath;path=${cfpath};variation=${variationname};ts=${Math.random()*1000}`;
     let url = aemauthorurl + persistedquery
     console.log(url);
     options = {credentials: "include"};   
@@ -101,14 +102,15 @@ function App (props) {
       console.log(error);
     }
 
+
   }
 
 
 
-  if (cf)
-    console.log('Content Fragment Path: ', cf)
+  if (cfpath)
+    console.log('Content Fragment Path: ', cfpath)
   else
-    cf = 'Not found - Displaying Placeholder Content'
+  cfpath = 'Not found - Displaying Placeholder Content'
 
   
 
@@ -120,6 +122,7 @@ function App (props) {
 
   useEffect(() => {
     getContentFragment();
+    
   }, [])
 
   return (
@@ -135,11 +138,11 @@ function App (props) {
             <View 
                 gridArea='sidebar'
                 padding='size-200'>
-                <SideBar cf={cf} variationname={variationname} contentfragment={state.contentfragment}></SideBar>
+                <SideBar cfpath={cfpath} variationname={variationname} contentfragment={state.contentfragment}></SideBar>
             </View>
             <View
               paddingTop='size-600'>
-              <Home contentfragment={state.contentfragment}></Home>
+              <Home cfpath={cfpath} contentfragment={state.contentfragment}></Home>
             </View>
             </Grid>
         </Provider>
