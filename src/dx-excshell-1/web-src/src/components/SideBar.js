@@ -61,9 +61,9 @@ function SideBar ({cfpath,variationname, contentfragment}) {
       <Header><strong>Variations</strong></Header>
       <ActionGroup selectionMode="single" selectedKeys={selected} defaultSelectedKeys={[variationname]} marginTop="10px" marginBottom="20px">
         <Item key="main">Main</Item>
-        <Item key="long term">Long Term Customers</Item>
+        <Item key="long_term_customers">Long Term Customers</Item>
         <Item key="students">Students</Item>
-        <Item key="high-value">High Value</Item>
+        <Item key="high_value">High Value</Item>
       </ActionGroup>
 
       <Header><strong>Languages</strong></Header>
