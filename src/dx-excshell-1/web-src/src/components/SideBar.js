@@ -44,6 +44,8 @@ function SideBar ({cfpath,variationname, contentfragment}) {
   const cfeditorpath = "https://experience.adobe.com/?repo=author-p55117-e571178.adobeaemcloud.com#/@mark-szulc/aem/cf/editor/editor" + cfpath;
   console.log("cfeditorpath", cfeditorpath);
 
+  let selected
+
   return (
     <View position='sticky' top='size-0' start='size-0' >
       <Heading level={1}>Content Fragment Preview</Heading>
@@ -57,17 +59,17 @@ function SideBar ({cfpath,variationname, contentfragment}) {
       </TagGroup>
 
       <Header><strong>Variations</strong></Header>
-      <ActionGroup selectionMode="single" defaultSelectedKeys={['list']} marginTop="10px" marginBottom="20px">
+      <ActionGroup selectionMode="single" selectedKeys={selected} defaultSelectedKeys={[variationname]} marginTop="10px" marginBottom="20px">
         <Item key="main">Main</Item>
         <Item key="long term">Long Term Customers</Item>
-        <Item key="students" onPress={() => openInNewTab("https://www.adobe.com")}>Students</Item>
+        <Item key="students">Students</Item>
         <Item key="high-value">High Value</Item>
       </ActionGroup>
 
       <Header><strong>Languages</strong></Header>
-      <ActionGroup selectionMode="single" defaultSelectedKeys={['list']} marginTop="10px" marginBottom="20px">
+      <ActionGroup selectionMode="single" selectedKeys={selected} defaultSelectedKeys={['en']} marginTop="10px" marginBottom="20px" onSelectionChange={() => openInNewTab("#")}>
         <Item key="en">English</Item>
-        <Item key="ja">Japanese</Item>
+        <Item key="ja" >Japanese</Item>
         <Item key="zo">Chinese</Item>
         <Item key="ko">Korean</Item>
       </ActionGroup>
