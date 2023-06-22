@@ -11,9 +11,9 @@ export default function Home({cfpath, contentfragment}) {
   
   return (
     <View>
-      <CFBanner1920x390 cfpath={cfpath} contentfragment={contentfragment} label="Banner Ad 1920 x 390" aemauthorurl={aemauthorurl}></CFBanner1920x390>
-      <CFBanner1300x435 cfpath={cfpath} contentfragment={contentfragment} label="Banner Ad 1300 x 435" aemauthorurl={aemauthorurl}></CFBanner1300x435>
-      <CFBanner440x770 contentfragment={contentfragment} label="Banner Ad 440 x 770" aemauthorurl={aemauthorurl}></CFBanner440x770>
+      <CFBanner1920x390 cfpath={cfpath} contentfragment={contentfragment} label="Web Banner 1920 x 390" aemauthorurl={aemauthorurl}></CFBanner1920x390>
+      <CFBanner1300x435 cfpath={cfpath} contentfragment={contentfragment} label="Web Banner 1300 x 435" aemauthorurl={aemauthorurl}></CFBanner1300x435>
+      <CFBanner440x770 contentfragment={contentfragment} label="Web Banner 440 x 770" aemauthorurl={aemauthorurl}></CFBanner440x770>
       <CFDigitalSignage1080x1920 contentfragment={contentfragment} label="Digital Signage 1080 x 1920" aemauthorurl={aemauthorurl}></CFDigitalSignage1080x1920>
     </View>
   );
