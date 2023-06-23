@@ -42,6 +42,7 @@ function App (props) {
     },
     "callToAction": "Call to Action",
     "heroImage": {
+      "_path": "",
       "_publishUrl": "",
       "_authorUrl": "https://placehold.co/2000x2000",
       "_dynamicUrl": ""
@@ -71,11 +72,11 @@ function App (props) {
       ]
     }
   }
-
-
- 
   
   const [state,setState] = useState({contentfragment: defaultcontent})
+  const [title, setTitle] = useState('999')
+
+  document.title = title;
 
   const getContentFragment = () => {
     let options = {};
@@ -92,8 +93,11 @@ function App (props) {
               console.log(contentfragment.data.offerByPath.item);
               let content = contentfragment.data.offerByPath.item;
               setState({contentfragment: content});
+
               console.log("Variations:" + contentfragment.data.offerByPath.item._variations);
               console.log("Tags:" + contentfragment.data.offerByPath.item._tags);
+
+              setTitle(contentfragment.data.offerByPath.item._metadata.stringMetadata.find(x => x.name === 'title').value)
               return content;
           } else {
               console.log("no data");
@@ -105,8 +109,6 @@ function App (props) {
 
 
   }
-
-
 
   if (cfpath)
     console.log('Content Fragment Path: ', cfpath)
