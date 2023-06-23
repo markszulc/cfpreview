@@ -10,7 +10,7 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
   if (_publishUrl === '') {
     assetPath = contentfragment.heroImage._authorUrl;
   } else {
-    assetPath = 'https://s7ap1.scene7.com/is/image/adobeanz/' + _publishUrl.split("/").pop().split(".")[0] + ':Banner-1300x435?ts=${Math.random()*1000}';
+    assetPath = 'https://s7ap1.scene7.com/is/image/adobeanz/' + _publishUrl.split("/").pop().split(".")[0] + ':Signage1080x1920?ts=${Math.random()*1000}';
   }
 
 
