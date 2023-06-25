@@ -1,0 +1,27 @@
+
+.app-150x150-content {
+  position: relative;
+  border: #000 1px solid;
+  width: 150px;
+  height: 150px;
+  background-color: #0295A6;
+}
+
+
+.app-150x150-content .banner-text {
+  margin: 0;
+  padding: 10px;
+  max-width: 150px;
+  color: #fff;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.app-150x150-content .banner-text h1 {
+  margin: 0;
+  font: normal normal 300 18px/20px Adobe Clean;
+  margin-bottom: 10px;
+}

@@ -70,7 +70,8 @@ function SideBar ({cfpath,variationname, contentfragment}) {
     {id: 1, name: 'Web Banner 1920 x 390'},
     {id: 2, name: 'Web Banner 1300 x 435'},
     {id: 3, name: 'Web Banner 440 x 770'},
-    {id: 4, name: 'Digital Signage 1080 x 1920'}
+    {id: 4, name: 'App 150 x 150'},
+    {id: 5, name: 'Digital Signage 1080 x 1920'}
   ];
 
   const tags = [

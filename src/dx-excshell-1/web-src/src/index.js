@@ -12,6 +12,7 @@ import App from './components/App'
 import './index.css'
 import './CFBanner.css'
 import './CFSignage.css'
+import './CFApp.css'
 
 
 window.React = require('react')
