@@ -29,7 +29,7 @@ function SideBar ({cfpath,variationname, contentfragment}) {
         images.push({id: key, name: cfimagepath, url: contentfragment[key]._authorUrl})
       }
     });
-    console.log('Images used: ' + images.length)
+    console.log('Images within CF: ' + images.length)
   }
 
   const updateVariation = (variation) => {

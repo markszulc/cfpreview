@@ -84,7 +84,7 @@ function App (props) {
     let options = {};
 
     
-    const persistedquery = process.env.AEM_PersistedQuery + ';path=${cfpath};variation=${variationname};ts=${Math.random()*1000}';
+    const persistedquery = process.env.AEM_PersistedQuery + `;path=${cfpath};variation=${variationname};ts=${Math.random()*1000}`;
     let url = aemauthorurl + persistedquery
     console.log('Persisted Query: ' + url);
     options = {credentials: "include"};   
