@@ -2,6 +2,9 @@
 
 This App Builder example pulls Content Fragments from AEM and displays them in different layouts. 
 
+<img width="512" alt="cfpreview-screenshot" src="https://github.com/markszulc/cfpreview/assets/1145871/6db75824-cd26-43cb-b686-e26b03ba8e21">
+
+
 ## Setup
 
 - Populate the `.env` file in the project root and fill it as shown [below](#env)
