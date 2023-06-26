@@ -4,14 +4,12 @@ import SecurBankSquares from '../../resources/sb-squares.svg';
 
 export default function CFBanner({ contentfragment, label}) {
 
-  console.log('Content Fragment Banner Headline: ', contentfragment.headline)
-
   let assetPath = '';
   const _publishUrl = contentfragment.heroImage._publishUrl;
   if (_publishUrl === '') {
     assetPath = contentfragment.heroImage._authorUrl;
   } else {
-    assetPath = 'https://s7ap1.scene7.com/is/image/adobeanz/' + _publishUrl.split("/").pop().split(".")[0] + ':Banner-440x770?ts=${Math.random()*1000}';
+    assetPath = process.env.AEM_DM + _publishUrl.split("/").pop().split(".")[0] + ':Banner-440x770?ts=${Math.random()*1000}';
   }
 
   return (

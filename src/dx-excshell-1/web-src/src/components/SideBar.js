@@ -20,14 +20,16 @@ function SideBar ({cfpath,variationname, contentfragment}) {
 
   const extractImageInfo = () => {
     images = [];
+    cfimagepath="";
     const keys = Object.keys(contentfragment)
     keys.forEach(key => {
       if(contentfragment[key] && (contentfragment[key]._authorUrl || contentfragment[key]._publishUrl || contentfragment[key]._dynamicUrl)) {
-        console.log(`https://author-p55117-e571178.adobeaemcloud.com/ui#/aem/assetdetails.html${contentfragment[key]._path}`)
-        images.push({id: key, name: `https://author-p55117-e571178.adobeaemcloud.com/ui#/aem/assetdetails.html${contentfragment[key]._path}`, url: contentfragment[key]._publishUrl})
+        cfimagepath = process.env.AEM_AUTHOR + "/ui#/aem/assetdetails.html$" + contentfragment[key]._path;
+        console.log('Sidebar Asset Source Image Path: ', cfimagepath)
+        images.push({id: key, name: cfimagepath, url: contentfragment[key]._authorUrl})
       }
     });
-    console.log(images.length)
+    console.log('Images used: ' + images.length)
   }
 
   const updateVariation = (variation) => {
@@ -86,9 +88,10 @@ function SideBar ({cfpath,variationname, contentfragment}) {
     console.log("Language Selected:", lang);
   };
 
-  const cfeditorpath = "https://experience.adobe.com/?repo=author-p55117-e571178.adobeaemcloud.com#/@mark-szulc/aem/cf/editor/editor" + cfpath;
-  const cfadminpath = "https://experience.adobe.com/?repo=author-p55117-e571178.adobeaemcloud.com#/@mark-szulc/aem/cf/admin/";
-
+  const cfeditorpath = process.env.AEM_CF_Editor_Path + cfpath;
+  const cfadminpath = process.env.AEM_CF_Admin_Path;
+  
+  
   return (
     <View position='sticky' top='size-0' start='size-0' >
       <Heading level={1}>Content Fragment Preview</Heading>

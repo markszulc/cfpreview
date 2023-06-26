@@ -32,8 +32,7 @@ function App (props) {
     console.log('history change', { type, path })
   })
 
-  //const aemauthorurl = 'https://author-p55117-e571178.adobeaemcloud.com';
-  const aemauthorurl = process.env.AEM_AUTHOR
+  const aemauthorurl = process.env.AEM_AUTHOR;
   console.log('AEM Author URL: ', aemauthorurl);
 
   
@@ -83,9 +82,11 @@ function App (props) {
 
   const getContentFragment = () => {
     let options = {};
-    const persistedquery = `/graphql/execute.json/securbank/OfferByPath;path=${cfpath};variation=${variationname};ts=${Math.random()*1000}`;
+
+    
+    const persistedquery = process.env.AEM_PersistedQuery + ';path=${cfpath};variation=${variationname};ts=${Math.random()*1000}';
     let url = aemauthorurl + persistedquery
-    console.log(url);
+    console.log('Persisted Query: ' + url);
     options = {credentials: "include"};   
     
     try {
