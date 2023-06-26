@@ -1,8 +1,8 @@
 import React from 'react'
-import SecurBankLogo from '../resources/sb-logo.svg';
-import SecurBankSquares from '../resources/sb-squares.svg';
+import SecurBankLogo from '../../resources/sb-logo.svg';
+import SecurBankSquares from '../../resources/sb-squares.svg';
 
-export default function CFBanner({ contentfragment, label, aemauthorurl}) {
+export default function CFBanner({ contentfragment, label}) {
 
   console.log('Content Fragment Banner Headline: ', contentfragment.headline)
 

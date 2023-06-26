@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function CFBanner({ contentfragment, label, aemauthorurl}) {
+export default function CFBanner({ contentfragment, label}) {
 
   console.log('Content Fragment Banner Headline: ', contentfragment.headline)
 

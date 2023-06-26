@@ -45,12 +45,12 @@ a.button:any-link, button {
   font-family: 'adobe-clean';
   font-style: normal;
   font-weight: normal;
-  src: local('Adobe Clean'), url('../fonts/AdobeClean-Regular.otf') format('opentype');
+  src: local('Adobe Clean'), url('../../fonts/AdobeClean-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'adobe-clean';
   font-style: normal;
   font-weight: 700;
-  src: local('Adobe Clean Black'), url('../fonts/AdobeClean-Black.otf') format('opentype');
+  src: local('Adobe Clean Black'), url('../../fonts/AdobeClean-Black.otf') format('opentype');
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function CFBanner({ contentfragment, label, aemauthorurl}) {
+export default function CFBanner({ contentfragment, label}) {
 
   console.log('Content Fragment Digital Signage: ', contentfragment.headline)
 
@@ -12,7 +12,6 @@ export default function CFBanner({ contentfragment, label, aemauthorurl}) {
   } else {
     assetPath = 'https://s7ap1.scene7.com/is/image/adobeanz/' + _publishUrl.split("/").pop().split(".")[0] + ':Signage1080x1920?ts=${Math.random()*1000}';
   }
-
 
   return (
     <div>

@@ -9,10 +9,10 @@ import ReactDOM from 'react-dom'
 import Runtime, { init } from '@adobe/exc-app'
 
 import App from './components/App'
-import './index.css'
-import './CFBanner.css'
-import './CFSignage.css'
-import './CFApp.css'
+import './styles/index.css'
+import './styles/CFBanner.css'
+import './styles/CFSignage.css'
+import './styles/CFApp.css'
 
 
 window.React = require('react')
