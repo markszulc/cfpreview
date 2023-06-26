@@ -68,16 +68,19 @@ function SideBar ({cfpath,variationname, contentfragment}) {
   let selected
 
 
+  let cftags = [];
+  const taglist = Object.keys(contentfragment._tags)
+  taglist.forEach(key => {
+      cftags.push({id: key, name: contentfragment._tags[key]})
+    });
+
+
   const layoutItems = [
     {id: 1, name: 'Web Banner 1920 x 390'},
     {id: 2, name: 'Web Banner 1300 x 435'},
     {id: 3, name: 'Web Banner 440 x 770'},
     {id: 4, name: 'App 150 x 150'},
     {id: 5, name: 'Digital Signage 1080 x 1920'}
-  ];
-
-  const tags = [
-    {id: 1, name: 'Subscribers'}
   ];
 
   const openInNewTab = url => {
@@ -91,7 +94,6 @@ function SideBar ({cfpath,variationname, contentfragment}) {
   const cfeditorpath = process.env.AEM_CF_Editor_Path + cfpath;
   const cfadminpath = process.env.AEM_CF_Admin_Path;
   
-  
   return (
     <View position='sticky' top='size-0' start='size-0' >
       <Heading level={1}>Content Fragment Preview</Heading>
@@ -100,8 +102,9 @@ function SideBar ({cfpath,variationname, contentfragment}) {
         <Heading level={4}><strong>Path:</strong><br/>{cfpath}</Heading> 
         <Heading level={4}><strong>Description:</strong><br/>{contentfragment._metadata.stringMetadata.find(x => x.name === 'description').value}</Heading> 
 
+
         <Header><strong>Tags</strong></Header>
-        <TagGroup items={tags} aria-label="TagGroup" marginBottom="10px">
+        <TagGroup items={cftags} aria-label="TagGroup" marginBottom="10px">
             {item => <Item>{item.name}</Item>}
         </TagGroup>
 
