@@ -32,8 +32,11 @@ function App (props) {
     console.log('history change', { type, path })
   })
 
-  const aemauthorurl = 'https://author-p55117-e571178.adobeaemcloud.com';
-    
+  //const aemauthorurl = 'https://author-p55117-e571178.adobeaemcloud.com';
+  const aemauthorurl = process.env.AEM_AUTHOR
+  console.log('AEM Author URL: ', aemauthorurl);
+
+  
   const defaultcontent = {
     "headline": "Headline",
     "pretitle": "Pretitle",
