@@ -24,7 +24,7 @@ function SideBar ({cfpath,variationname, contentfragment}) {
     const keys = Object.keys(contentfragment)
     keys.forEach(key => {
       if(contentfragment[key] && (contentfragment[key]._authorUrl || contentfragment[key]._publishUrl || contentfragment[key]._dynamicUrl)) {
-        cfimagepath = process.env.AEM_AUTHOR + "/ui#/aem/assetdetails.html$" + contentfragment[key]._path;
+        cfimagepath = process.env.AEM_AUTHOR + "/ui#/aem/assetdetails.html" + contentfragment[key]._path;
         console.log('Sidebar Asset Source Image Path: ', cfimagepath)
         images.push({id: key, name: cfimagepath, url: contentfragment[key]._authorUrl})
       }
