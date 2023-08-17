@@ -87,7 +87,12 @@ function App (props) {
     const persistedquery = process.env.AEM_PersistedQuery + `;path=${cfpath};variation=${variationname};ts=${Math.random()*1000}`;
     let url = aemauthorurl + persistedquery
     console.log('Persisted Query: ' + url);
-    options = {credentials: "include"};   
+    options = {
+      headers: new Headers({
+        'Authorization': 'Bearer '+props.ims.token, 
+        'Content-Type': 'application/json'
+      })
+    };   
     
     try {
       const cfReq = fetch(url+"?ts="+Math.random()*1000, options)

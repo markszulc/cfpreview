@@ -24,9 +24,9 @@ function SideBar ({cfpath,variationname, contentfragment}) {
     const keys = Object.keys(contentfragment)
     keys.forEach(key => {
       if(contentfragment[key] && (contentfragment[key]._authorUrl || contentfragment[key]._publishUrl || contentfragment[key]._dynamicUrl)) {
-        cfimagepath = process.env.AEM_AUTHOR + "/ui#/aem/assetdetails.html$" + contentfragment[key]._path;
+        cfimagepath = process.env.AEM_AUTHOR + "/ui#/aem/assetdetails.html" + contentfragment[key]._path;
         console.log('Sidebar Asset Source Image Path: ', cfimagepath)
-        images.push({id: key, name: cfimagepath, url: contentfragment[key]._authorUrl})
+        images.push({id: key, name: cfimagepath, url: contentfragment[key]._publishUrl})
       }
     });
     console.log('Images within CF: ' + images.length)
@@ -69,7 +69,7 @@ function SideBar ({cfpath,variationname, contentfragment}) {
 
 
   let cftags = [];
-  const taglist = Object.keys(contentfragment._tags)
+  const taglist = contentfragment._tags ? Object.keys(contentfragment._tags) : []
   taglist.forEach(key => {
       cftags.push({id: key, name: contentfragment._tags[key]})
     });
