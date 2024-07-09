@@ -10,7 +10,7 @@ export default function CFBanner({ cfpath, contentfragment, label}) {
   if (_publishUrl === '') {
     assetPath = contentfragment.heroImage._authorUrl;
   } else {
-    assetPath = process.env.AEM_DM + _publishUrl.split("/").pop().split(".")[0] + ':Banner-1300x435?ts=${Math.random()*1000}';
+    assetPath = process.env.AEM_DM + _publishUrl.split("/").pop().split(".")[0] + `:Banner-1300x435?ts=${Math.random()*1000}`;
   }
 
   itemId =  "urn:aemconnection:" + cfpath + "/jcr:content/data/master";      

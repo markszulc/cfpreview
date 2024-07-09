@@ -14,6 +14,7 @@ function SideBar ({cfpath,variationname, contentfragment}) {
   let [count, setCount] = React.useState(0);
   let [action, setAction] = React.useState(null);
   let [variation, setVariation] = React.useState('main');
+  let [variations, setVariations] = React.useState([]);
   let [language, setLanguage] = React.useState(cfpath.split("/")[4]);
   let showDetails = false;
   let images = [];
@@ -26,7 +27,7 @@ function SideBar ({cfpath,variationname, contentfragment}) {
       if(contentfragment[key] && (contentfragment[key]._authorUrl || contentfragment[key]._publishUrl || contentfragment[key]._dynamicUrl)) {
         cfimagepath = process.env.AEM_AUTHOR + "/ui#/aem/assetdetails.html" + contentfragment[key]._path;
         console.log('Sidebar Asset Source Image Path: ', cfimagepath)
-        images.push({id: key, name: cfimagepath, url: contentfragment[key]._authorUrl})
+        images.push({id: key, name: cfimagepath, url: contentfragment[key]._publishUrl})
       }
     });
     console.log('Images within CF: ' + images.length)
@@ -39,6 +40,10 @@ function SideBar ({cfpath,variationname, contentfragment}) {
     console.log(searchParams)
     searchParams.set('variation', `${variation}`)
     window.location.search = searchParams.toString();
+  }
+
+  const prettifyString = (word) => {
+    return word.replace('-', ' ').replace(/(?:^|\s)\S/g, a => a.toUpperCase());
   }
 
   const updateLanguage = (lang) => {
@@ -69,7 +74,7 @@ function SideBar ({cfpath,variationname, contentfragment}) {
 
 
   let cftags = [];
-  const taglist = Object.keys(contentfragment._tags)
+  const taglist = contentfragment._tags ? Object.keys(contentfragment._tags) : []
   taglist.forEach(key => {
       cftags.push({id: key, name: contentfragment._tags[key]})
     });
@@ -79,8 +84,9 @@ function SideBar ({cfpath,variationname, contentfragment}) {
     {id: 1, name: 'Web Banner 1920 x 390'},
     {id: 2, name: 'Web Banner 1300 x 435'},
     {id: 3, name: 'Web Banner 440 x 770'},
-    {id: 4, name: 'App 150 x 150'},
-    {id: 5, name: 'Digital Signage 1080 x 1920'}
+    {id: 4, name: 'Email Banner 1920 x 450'},
+    {id: 5, name: 'App 150 x 150'},
+    {id: 6, name: 'Digital Signage 1080 x 1920'}
   ];
 
   const openInNewTab = url => {
@@ -110,12 +116,10 @@ function SideBar ({cfpath,variationname, contentfragment}) {
 
         <Header><strong>Variations</strong></Header>
         <ActionGroup selectionMode="single" selectedKeys={selected} defaultSelectedKeys={[variationname]} marginTop="10px" marginBottom="20px" onAction={updateVariation} >
-          <Item key="main">Main</Item>
-          <Item key="long_term_customers">Long Term Customers</Item>
-          <Item key="students">Students</Item>
-          <Item key="high_value">High Value</Item>
-          <Item key="investors">Investors</Item>
-          <Item key="family_starters">Family Starters</Item>
+          <Item key='main'><Text>Main</Text></Item>
+          {contentfragment._variations.map(function(item){
+            return <Item key={item}><Text>{prettifyString(item)}</Text></Item>;
+          })}
 
         </ActionGroup>
 

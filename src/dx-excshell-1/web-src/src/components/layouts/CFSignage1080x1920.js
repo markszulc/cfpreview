@@ -8,7 +8,7 @@ export default function CFBanner({ contentfragment, label}) {
   if (_publishUrl === '') {
     assetPath = contentfragment.heroImage._authorUrl;
   } else {
-    assetPath = process.env.AEM_DM + _publishUrl.split("/").pop().split(".")[0] + ':Signage1080x1920?ts=${Math.random()*1000}';
+    assetPath = process.env.AEM_DM + _publishUrl.split("/").pop().split(".")[0] + ':Signage-1080x1920?ts=${Math.random()*1000}';
   }
 
   return (
