@@ -1,38 +1,41 @@
 /* 
 * <license header>
 */
-import React, { useEffect, useState } from 'react'
-import { Provider, defaultTheme, colorScheme, Grid, View } from '@adobe/react-spectrum'
-import ErrorBoundary from 'react-error-boundary'
-import { HashRouter as Router, Switch, Route} from 'react-router-dom'
-import Home from './Home'
-import SideBar from './SideBar'
+import React, { useEffect, useState } from 'react';
+import { Provider, defaultTheme, colorScheme, Grid, View } from '@adobe/react-spectrum';
+import ErrorBoundary from 'react-error-boundary';
+import { HashRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from './Home';
+import SideBar from './SideBar';
 
 function App (props) {
-  console.log('runtime object:', props.runtime)
-  console.log('ims object:', props.ims)
+  console.log('runtime object:', props.runtime);
+  console.log('ims object:', props.ims);
 
-  const cfparam = new URLSearchParams(document.location.search)
-  const cfpath = cfparam.get('cf')
-  const variationname = cfparam.get('variation')
+  // const cfparam = new URLSearchParams(document.location.search);
+  // const cfpath = cfparam.get('cf');
+  // const variationname = cfparam.get('variation');
+  // const aemUrl = cfparam.get('aemUrl');
+
+  const cfpath = '/content/dam/securbank/en/offers/1716';
+  const variationname = 'main';
+  const aemUrl = 'https://author-p115476-e1135027.adobeaemcloud.com';
 
   if (cfpath) {
     console.log('Content Fragment Path: ', cfpath);
-  }
-  else
-  cfpath = 'Not found - Displaying Placeholder Content'
+  } else cfpath = 'Not found - Displaying Placeholder Content';
 
   // use exc runtime event handlers
   // respond to configuration change events (e.g. user switches org)
   props.runtime.on('configuration', ({ imsOrg, imsToken, locale }) => {
-    console.log('configuration change', { imsOrg, imsToken, locale })
+    console.log('configuration change', { imsOrg, imsToken, locale });
   })
   // respond to history change events
   props.runtime.on('history', ({ type, path }) => {
-    console.log('history change', { type, path })
+    console.log('history change', { type, path });
   })
 
-  const aemauthorurl = process.env.AEM_AUTHOR;
+  const aemauthorurl = aemUrl ? aemUrl : process.env.AEM_AUTHOR;
   console.log('AEM Author URL: ', aemauthorurl);
 
   
@@ -46,7 +49,7 @@ function App (props) {
     "heroImage": {
       "_path": "",
       "_publishUrl": "",
-      "_authorUrl": "https://placehold.co/2000x2000",
+      "_authorUrl": "https://placehold.co/1920x450",
       "_dynamicUrl": ""
     },
     "_tags": [

@@ -154,6 +154,118 @@
   line-height: 22px;
 }
 
+/* email */
+.wrapper {
+  display: flex;  
+  flex-flow: column wrap;
+  font-weight: bold;
+}
+
+.wrapper > * {
+  flex: 1 100%;
+}
+
+.email-1920x450-content {
+  position: relative;
+  border: #000 1px solid;
+  width: 1920px;
+  height: 450px;
+}
+
+.email-1920x450-content .email-pic {
+  display: flex;
+  justify-content: space-between;
+  width: 1920px;
+  height: 420px;
+}
+
+.email-1920x450-content .email-text {
+  display: flex;
+  flex-flow: column wrap;
+  
+  justify-content: flex-end;
+  background: rgba(23,28,41,1);
+  margin-top: -120px;
+  padding: 0px 60px 20px 60px;
+  box-sizing: initial;
+  color: #fff;
+  height: 128px;
+  border-bottom-right-radius: 25px; 
+  border-bottom-left-radius: 25px; 
+  position: relative;
+}
+
+.email-1920x450-content .email-text h1 {
+  white-space: nowrap;
+  line-height: 52px;
+  text-align: left;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(255,255,255,1);
+}
+.email-1920x450-content .email-text h3 {
+  white-space: nowrap;
+  line-height: 52px;
+  margin-top: -26px;
+  text-align: left;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(255,255,255,1);
+}
+.email-1920x450-content .email-text .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.email-1920x450-content .email-text .button-container .button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #CBE7F0;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: Adobe Clean;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(44,44,44,1);
+  border-radius: 25px;
+}
+
+.email-1920x450-content .email-pic .pic {
+  width: 865px;
+  box-sizing: border-box;
+  height: 435px;
+}
+
+.email-1920x450-content .email-pic .pic img {
+  object-fit: cover;
+  box-sizing: border-box;
+  position: relative;
+  height: 435px;
+  width: 865px;
+  z-index: -1;
+}
+
+.email-1920x450-content .email-pic .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 435px;
+}
+
+.email-1920x450-content .banner-pic .logo img {
+  width: 200px;
+}
+
+
 /* default */
 
   .banner-text {
