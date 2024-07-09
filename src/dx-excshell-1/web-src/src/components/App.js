@@ -12,14 +12,10 @@ function App (props) {
   console.log('runtime object:', props.runtime);
   console.log('ims object:', props.ims);
 
-  // const cfparam = new URLSearchParams(document.location.search);
-  // const cfpath = cfparam.get('cf');
-  // const variationname = cfparam.get('variation');
-  // const aemUrl = cfparam.get('aemUrl');
-
-  const cfpath = '/content/dam/securbank/en/offers/1716';
-  const variationname = 'main';
-  const aemUrl = 'https://author-p115476-e1135027.adobeaemcloud.com';
+  const cfparam = new URLSearchParams(document.location.search);
+  const cfpath = cfparam.get('cf');
+  const variationname = cfparam.get('variation');
+  const aemUrl = cfparam.get('aemUrl');
 
   if (cfpath) {
     console.log('Content Fragment Path: ', cfpath);
