@@ -179,6 +179,11 @@
   height: 420px;
 }
 
+.email-1920x450-content .email-pic img {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
 .email-1920x450-content .email-text {
   display: flex;
   flex-flow: column wrap;
