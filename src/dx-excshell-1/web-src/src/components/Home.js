@@ -11,12 +11,12 @@ export default function Home({cfpath, contentfragment}) {
 
   return (
     <View>
-      <CFBanner1920x390 cfpath={cfpath} contentfragment={contentfragment} label="Web Banner 1920 x 390"></CFBanner1920x390>
-      <CFBanner1300x435 cfpath={cfpath} contentfragment={contentfragment} label="Web Banner 1300 x 435"></CFBanner1300x435>
-      <CFEmail1920x450 cfpath={cfpath}  contentfragment={contentfragment} label="Email Banner 1920 x 450"></CFEmail1920x450>
-      <CFBanner440x770 contentfragment={contentfragment} label="Web Banner 440 x 770"></CFBanner440x770>
-      <CFApp150x150 contentfragment={contentfragment} label="App 150 x 150"></CFApp150x150>
-      <CFDigitalSignage1080x1920 contentfragment={contentfragment} label="Digital Signage 1080 x 1920"></CFDigitalSignage1080x1920>
+        <CFBanner1920x390 cfpath={cfpath} contentfragment={contentfragment} label="Web Banner 1920 x 390" sty></CFBanner1920x390>
+        <CFBanner1300x435 cfpath={cfpath} contentfragment={contentfragment} label="Web Banner 1300 x 435"></CFBanner1300x435>
+        <CFEmail1920x450 cfpath={cfpath}  contentfragment={contentfragment} label="Email Banner 1920 x 450"></CFEmail1920x450>
+        <CFBanner440x770 contentfragment={contentfragment} label="Web Banner 440 x 770"></CFBanner440x770>
+        <CFApp150x150 contentfragment={contentfragment} label="App 150 x 150"></CFApp150x150>
+        <CFDigitalSignage1080x1920 contentfragment={contentfragment} label="Digital Signage 1080 x 1920"></CFDigitalSignage1080x1920>
     </View>
   );
 

@@ -9,12 +9,12 @@ export default function CFBanner({ contentfragment, label}) {
   if (_publishUrl === '') {
     assetPath = contentfragment.heroImage._authorUrl;
   } else {
-    assetPath = process.env.AEM_DM + _publishUrl.split("/").pop().split(".")[0] + ':Banner-440x770?ts=${Math.random()*1000}';
+    assetPath = contentfragment.heroImage._dmS7Url + ':Banner-440x770?ts=${Math.random()*1000}';
   }
 
   return (
     <div>
-    <div className='banner-440x770-content'>
+    <div className='banner-440x770-content layout-wrapper'>
       <div className='banner-pic'>
         <div className='pic'>
             <img 

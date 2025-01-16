@@ -41,6 +41,16 @@ a.button:any-link, button {
     border-radius: 30px;
 }
 
+.layout-wrapper {
+  zoom: 0.7;
+}
+
+.sidebar {
+  position: 'sticky';
+  background-color: var(--spectrum-gray-50, var(--spectrum-global-color-gray-50));
+  border-right: 1px solid var(--spectrum-global-color-gray-300);
+}
+
 @font-face {
   font-family: 'adobe-clean';
   font-style: normal;

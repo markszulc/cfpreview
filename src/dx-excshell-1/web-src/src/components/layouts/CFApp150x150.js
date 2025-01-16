@@ -5,7 +5,7 @@ export default function CFBanner({ contentfragment, label}) {
 
   return (
     <div>
-      <div className='phone-wrapper'>
+      <div className='phone-wrapper layout-wrapper'>
         <div className='app-150x150-content'>
           <div className='banner-text'>
             <h1>{contentfragment.headline}</h1>

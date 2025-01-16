@@ -16,6 +16,8 @@ function App (props) {
   const cfpath = cfparam.get('cf');
   const variationname = cfparam.get('variation');
   const aemUrl = cfparam.get('aemUrl');
+  const cfid = cfparam.get('cfid');
+  console.log('Content Fragment ID: ', cfid);
 
   if (cfpath) {
     console.log('Content Fragment Path: ', cfpath);
@@ -51,11 +53,7 @@ function App (props) {
     "_tags": [
       "audiences:subscribers"
     ],
-    "_variations": [
-      "long_term_customers",
-      "students",
-      "high_value"
-    ],
+    "_variations": [],
     "_metadata": {
       "stringMetadata": [
         {
@@ -84,7 +82,7 @@ function App (props) {
 
     
     const persistedquery = process.env.AEM_PersistedQuery + `;path=${cfpath};variation=${variationname};ts=${Math.random()*1000}`;
-    let url = aemauthorurl + persistedquery
+    let url = "https://" + aemauthorurl + persistedquery
     console.log('Persisted Query: ' + url);
     options = {
       headers: new Headers({
@@ -146,11 +144,15 @@ function App (props) {
             rows={['auto']}
             gap='size-100'
           >
+          <div className='sidebar'>
             <View 
                 gridArea='sidebar'
                 padding='size-200'>
+
                 <SideBar cfpath={cfpath} variationname={variationname} contentfragment={state.contentfragment}></SideBar>
-            </View>
+     
+              </View>
+          </div>
             <View
               paddingTop='size-600'>
               <Home cfpath={cfpath} contentfragment={state.contentfragment}></Home>

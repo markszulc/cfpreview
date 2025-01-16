@@ -4,7 +4,7 @@
 
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Heading, Header, ActionGroup, ActionButton, Text,Button, View, TagGroup, Item, Avatar, Image } from '@adobe/react-spectrum'
+import { Heading, Header, ActionGroup, ActionButton, Slider, Text,Button, View, TagGroup, Item, Avatar, Image } from '@adobe/react-spectrum'
 import EditIcon from '@spectrum-icons/workflow/Edit';
 import HomeIcon from '@spectrum-icons/workflow/Home';
 
@@ -13,6 +13,7 @@ function SideBar ({cfpath,variationname, contentfragment}) {
 
   let [count, setCount] = React.useState(0);
   let [action, setAction] = React.useState(null);
+  let [zoom, setZoom] = React.useState(0.7);
   let [variation, setVariation] = React.useState('main');
   let [variations, setVariations] = React.useState([]);
   let [language, setLanguage] = React.useState(cfpath.split("/")[4]);
@@ -32,6 +33,15 @@ function SideBar ({cfpath,variationname, contentfragment}) {
     });
     console.log('Images within CF: ' + images.length)
   }
+
+  const updateZoom = (zoomlevel) => {
+    console.log(zoomlevel)
+    setZoom(zoomlevel)
+    document.querySelectorAll('.layout-wrapper').forEach(element => {
+      element.style.zoom = zoomlevel;
+    });
+  }
+
 
   const updateVariation = (variation) => {
     setVariation(variation)
@@ -101,14 +111,12 @@ function SideBar ({cfpath,variationname, contentfragment}) {
   const cfadminpath = process.env.AEM_CF_Admin_Path;
   
   return (
-    <View position='sticky' top='size-0' start='size-0' >
-      <Heading level={1}>Content Fragment Preview</Heading>
-
+    <View top='size-0' start='size-0'  >
+    
       <View isHidden={!showDetails}>
-        <Heading level={4}><strong>Path:</strong><br/>{cfpath}</Heading> 
         <Heading level={4}><strong>Description:</strong><br/>{contentfragment._metadata.stringMetadata.find(x => x.name === 'description').value}</Heading> 
-
-
+        <Heading level={4}><strong>Path:</strong><br/>{cfpath}</Heading> 
+        
         <Header><strong>Tags</strong></Header>
         <TagGroup items={cftags} aria-label="TagGroup" marginBottom="10px">
             {item => <Item>{item.name}</Item>}
@@ -118,9 +126,9 @@ function SideBar ({cfpath,variationname, contentfragment}) {
         <ActionGroup selectionMode="single" selectedKeys={selected} defaultSelectedKeys={[variationname]} marginTop="10px" marginBottom="20px" onAction={updateVariation} >
           <Item key='main'><Text>Main</Text></Item>
           {contentfragment._variations.map(function(item){
+            item = item.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
             return <Item key={item}><Text>{prettifyString(item)}</Text></Item>;
           })}
-
         </ActionGroup>
 
         <Header><strong>Languages</strong></Header>
@@ -152,9 +160,24 @@ function SideBar ({cfpath,variationname, contentfragment}) {
         </ActionGroup>
 
         </View>
+        <Slider
+          label="Zoom"
+          minValue={0.1}
+          maxValue={1}
+          formatOptions={{ style: 'percent' }}
+          step={0.01}
+          defaultValue={0.7}
+          fillOffset={0}
+          onChange={updateZoom}
+          aria-label="Zoom"
+          aria-details='Zoom in and out'
+          alt="Zoom"
+          marginTop="20px"
+        />
         <Button width="size-1000"  aria-label="Content Fragment Admin" marginTop="20px" marginEnd="10px" onPress={() => openInNewTab(cfadminpath)}><HomeIcon width="size-200" /><Text>Home</Text></Button>
         <Button  isHidden={!showDetails} width="size-1000" marginTop="20px"  aria-label="Edit Content Fragment" onPress={() => openInNewTab(cfeditorpath)}><EditIcon width="size-200" /><Text>Edit</Text></Button>
  
+
       </View>
   )
 }

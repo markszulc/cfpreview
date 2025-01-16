@@ -10,13 +10,14 @@ export default function CFBanner({ cfpath, contentfragment, label}) {
   if (_publishUrl === '') {
     assetPath = contentfragment.heroImage._authorUrl;
   } else {
-    assetPath = process.env.AEM_DM + _publishUrl.split("/").pop().split(".")[0] + `:Banner-1300x435?ts=${Math.random()*1000}`;
+    assetPath = contentfragment.heroImage._dmS7Url + `:Banner-1300x435?ts=${Math.random()*1000}`;
   }
 
   itemId =  "urn:aemconnection:" + cfpath + "/jcr:content/data/master";      
 
   return (
     <div>
+    <div className='layout-wrapper'>
     <div className='banner-1300x435-content' itemScope itemID={itemId} itemfilter="cf">
       <div className='banner-pic'>
         <div className='pic'>
@@ -36,6 +37,7 @@ export default function CFBanner({ cfpath, contentfragment, label}) {
         <p>{contentfragment.detail.plaintext}</p>
         <p className='button-container'><a href='#' className='button primary'>{contentfragment.callToAction}</a></p>
       </div>
+    </div>
     </div>
     <h3 className='cfheading'>{label}</h3>
     </div>
